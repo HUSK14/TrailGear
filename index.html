@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TrailGear & HS'tore туристическое снаряжение BY EFREMOV</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header__inner">
+        <a class="logo" href="#">TrailGear & Harry's store</a>
+
+        <nav class="nav" aria-label="Навигация">
+          <a href="#hero" class="nav__link">Главная</a>
+          <a href="#catalog" class="nav__link">Каталог</a>
+          <a href="#about" class="nav__link">О нас</a>
+          <a href="#contacts" class="nav__link">Контакты</a>
+        </nav>
+
+        <div class="header__actions">
+          <label class="search" aria-label="Поиск товаров">
+            <span class="search__icon" aria-hidden="true">🔍</span>
+            <input
+              class="search__input"
+              type="search"
+              id="search-input"
+              placeholder="Поиск снаряжения..."
+              autocomplete="off"
+            />
+          </label>
+
+          <button
+            class="busket-toggle"
+            type="button"
+            aria-controls="busketPanel"
+            aria-expanded="false"
+          >
+            Корзина
+            <span class="busket-toggle__count" aria-label="Количество товаров в корзине">0</span>
+          </button>
+
+          <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <nav class="burger-menu hidden" aria-label="Мобильное меню">
+        <a href="#hero" class="burger-menu__link">Главная</a>
+        <a href="#catalog" class="burger-menu__link">Каталог</a>
+        <a href="#about" class="burger-menu__link">О нас</a>
+        <a href="#contacts" class="burger-menu__link">Контакты</a>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="hero" id="hero" aria-label="Акции и коллекции">
+        <div class="container">
+          <div class="slider">
+            <div class="slider__track">
+              <article class="slide slide--active" data-slide="0">
+                <div class="slide__content">
+                  <span class="slide__tag">Новая коллекция</span>
+                  <h1 class="slide__title">Готовься к горным походам</h1>
+                  <p class="slide__text">
+                    Палатки, рюкзаки и спальники для настоящих путешественников.
+                  </p>
+                  <a class="btn btn--accent slide__btn" href="#catalog">Смотреть каталог</a>
+                </div>
+                <div class="slide__visual" aria-hidden="true">🏔️</div>
+              </article>
+
+              <article class="slide" data-slide="1">
+                <div class="slide__content">
+                  <span class="slide__tag">Скидки до 25%</span>
+                  <h2 class="slide__title">Летняя распродажа</h2>
+                  <p class="slide__text">
+                    Трекинговая обувь, одежда и аксессуары по выгодным ценам.
+                  </p>
+                  <a class="btn btn--accent slide__btn" href="#catalog">Выбрать товар</a>
+                </div>
+                <div class="slide__visual" aria-hidden="true">🥾</div>
+              </article>
+
+              <article class="slide" data-slide="2">
+                <div class="slide__content">
+                  <span class="slide__tag">Бесплатная доставка</span>
+                  <h2 class="slide__title">Всё для кемпинга</h2>
+                  <p class="slide__text">
+                    Горелки, посуда, фонари — собери лагерь за один заказ.
+                  </p>
+                  <a class="btn btn--accent slide__btn" href="#catalog">В каталог</a>
+                </div>
+                <div class="slide__visual" aria-hidden="true">🏕️</div>
+              </article>
+            </div>
+
+            <button class="slider__btn slider__btn--prev" type="button" aria-label="Предыдущий слайд">
+              ‹
+            </button>
+            <button class="slider__btn slider__btn--next" type="button" aria-label="Следующий слайд">
+              ›
+            </button>
+
+            <div class="slider__dots" role="tablist" aria-label="Выбор слайда">
+              <button class="slider__dot slider__dot--active" type="button" data-slide="0" aria-label="Слайд 1"></button>
+              <button class="slider__dot" type="button" data-slide="1" aria-label="Слайд 2"></button>
+              <button class="slider__dot" type="button" data-slide="2" aria-label="Слайд 3"></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="catalog" id="catalog">
+        <div class="container">
+          <div class="catalog__head">
+            <div>
+              <h2 class="section-title">Каталог снаряжения</h2>
+              <p class="section-subtitle">
+                Более 30 товаров для походов, путешествий и активного отдыха
+              </p>
+            </div>
+            <p class="catalog__count" id="catalog-count"></p>
+          </div>
+
+          <div class="main-block">
+            <section class="tovar" aria-label="Товары">
+              <div class="tovar-inner"></div>
+              <p class="catalog__empty hidden" id="catalog-empty">Ничего не найдено. Попробуйте другой запрос.</p>
+              <button class="btn btn--outline show-more" id="show-more" type="button">
+                Показать ещё
+              </button>
+            </section>
+
+            <aside class="busket" aria-label="Корзина (десктоп)">
+              <h2>Корзина</h2>
+              <div class="content_busket">
+                <p></p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="about" id="about">
+        <div class="container about__grid">
+          <div>
+            <h2 class="section-title">О магазине TrailGear</h2>
+            <p>
+              Мы помогаем путешественникам собираться в дорогу с мая 2026 года. В каталоге - только проверенное
+              снаряжение для гор, леса и дальних маршрутов: от палаток до навигации.
+            </p>
+          </div>
+          <ul class="about__features">
+            <li>🚚 Доставка по всей России</li>
+            <li>✅ Гарантия на всё снаряжение</li>
+            <li>🎒 Консультация по подбору экипировки</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="contacts">
+      <div class="container footer__inner">
+        <div>
+          <strong>TrailGear & Harry's store</strong>
+          <p>Туристическое снаряжение и путешествия</p>
+        </div>
+        <div>
+          <p>г. Москва, ул. Путешественников, 20</p>
+          <p>+8 (800) 555-35-35 · info@trailgearAndHStore.ru</p>
+        </div>
+        <p class="footer__author">BY EFREMOV ISP342 · ПР1-20</p>
+        <p class="footer__disclaimer">
+          Сайт разработан в учебных целях и не является реальным интернет-магазином.
+        </p>
+      </div>
+    </footer>
+
+    <div class="busket-overlay" data-busket-overlay hidden>
+      <div class="busket-panel" id="busketPanel" role="dialog" aria-modal="true" aria-label="Корзина">
+        <div class="busket-panel__header">
+          <h2>Корзина</h2>
+          <button class="busket-close" type="button" aria-label="Закрыть корзину">✕</button>
+        </div>
+        <div class="content_busket content_busket--panel">
+          <p></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="details-overlay" data-details-overlay hidden>
+      <div class="details-modal" role="dialog" aria-modal="true" aria-label="Подробная информация о товаре">
+        <div class="details-modal__header">
+          <h2 class="details-modal__title">Товар</h2>
+          <button class="details-close" type="button" aria-label="Закрыть окно">✕</button>
+        </div>
+        <div class="details-modal__body"></div>
+      </div>
+    </div>
+
+    <script src="./products.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
